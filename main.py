@@ -2,6 +2,7 @@
 # A QR code is generated in the current director with the information provided.-
 
 import qrcode
+from PIL import Image
 
 def generate():
     '''
@@ -17,7 +18,9 @@ def generate():
     try:    
         img = qrcode.make(url)
         img.save(file)
+        img.show(Image.open(file))  # Comment this line out if you don't want the file to automatically open
         print('QR code successfully generated (' + file + ').')
+
     except:
         print('An unknown error occured.')
 

@@ -6,4 +6,4 @@ ezQR is an extremely simple Python utility implementation of a QR code generator
 
 For questions regarding this project, feel free to shoot me an email: windowsdotexe@gmail.com
 
-Imported modules: qrcode (-m pip install qrcode)
+Imported modules: qrcode (-m pip install qrcode), PIL (Image)
