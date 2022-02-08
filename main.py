@@ -12,7 +12,7 @@ def generate():
     url = input('Enter text to generate a QR code: ')
     file = input('Enter the file for the QR code or press enter for default ("qr.jpg"): ')
 
-    if file == '':  # Enter key was pressed
+    if file == '':  # Enter key was pressed; default filename
         file = 'qr.jpg'
 
     try:    
@@ -20,6 +20,9 @@ def generate():
         img.save(file)
         img.show(Image.open(file))  # Comment this line out if you don't want the file to automatically open
         print('QR code successfully generated (' + file + ').')
+
+    except qrcode.exceptions.DataOverflowError:
+        print('ERROR: You have entered too many characters.')
 
     except:
         print('An unknown error occured.')
